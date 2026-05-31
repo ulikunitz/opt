@@ -17,7 +17,8 @@ func TestOption(t *testing.T) {
 		Name  string           `json:",omitempty"`
 		Size1 opt.Value[int]   `json:",omitzero"`
 		Size2 opt.Value[int64] `json:",omitzero"`
-		S     opt.Value[s]     `json:",omitzero"`
+		Size3 opt.Value[int8]
+		S     opt.Value[s] `json:",omitzero"`
 	}
 
 	tests := []ts{
