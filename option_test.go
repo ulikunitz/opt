@@ -76,6 +76,6 @@ func Example() {
 	// Output:
 	// {
 	//   "Name": "example",
-	//   "A": 42,
+	//   "A": 42
 	// }
 }
