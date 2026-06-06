@@ -3,13 +3,27 @@
 // types are simplified, if the fields are tagged with `json:",omitzero"`.
 package opt
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"fmt"
+)
 
 // Value represents an optional Value. The value V can only be interpreted if Ok
 // is true. Note that the zero value is not a valid entry.
 type Value[T any] struct {
 	V  T
 	Ok bool
+}
+
+func (o Value[T]) IsZero() bool {
+	return !o.Ok
+}
+
+func (o Value[T]) String() string {
+	if o.Ok {
+		return fmt.Sprintf("%v", o.V)
+	}
+	return "null"
 }
 
 // Returns a valid Value.
